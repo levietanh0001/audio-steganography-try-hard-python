@@ -1,5 +1,6 @@
 import wave
 
+
 def case(a):
 	if a == '1':
 		encode()
@@ -10,8 +11,9 @@ def case(a):
 	else:
 		print("\nEnter valid choice!")
 
+
 def encode():
-        string_in = input("\nEnter the string you want to hide: ")
+	string_in = input("\nEnter the string you want to hide: ")
 	print("\Encoding in progress..")
 	audio = wave.open("sample.wav",mode="rb")
 	frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
@@ -25,13 +27,14 @@ def encode():
 	frame_modified = bytes(frame_bytes)
 	for i in range(0,10):
 		print(frame_bytes[i])
-	newAudio =  wave.open('sample_out.wav', 'wb')
-	newAudio.setparams(audio.getparams())
-	newAudio.writeframes(frame_modified)
+	new_audio = wave.open('sample_out.wav', 'wb')
+	new_audio.setparams(audio.getparams())
+	new_audio.writeframes(frame_modified)
 
-	newAudio.close()
+	new_audio.close()
 	audio.close()
 	print(" |---->succesfully encoded inside sample_out.wav")
+
 
 def decode():
 	print("\nDecoding Starts..")
@@ -42,6 +45,7 @@ def decode():
 	decoded = string_out.split("###")[0]
 	print("Sucessfully decoded: "+decoded)
 	audio.close()	
+
 
 while(1):
 	print("\nEnter your choice:\n1 = Encode\n2 = Decode\n3 = Exit")
