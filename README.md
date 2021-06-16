@@ -12,27 +12,27 @@
 
   <tr>
   	<td> Le Viet Anh </td>
-  	<td>  </td>
+  	<td> Coding </td>
   </tr>
   
   <tr>
   	<td> Do Thanh Dat </td>
-  	<td>  </td>
+  	<td> Presentation </td>
   </tr>  
 
   <tr>
   	<td> Vu Tuan Phuong Nam </td>
-  	<td>  </td>
+  	<td> Co-coder </td>
   </tr>
 
   <tr>
   	<td> Tran Bao Huy </td>
-  	<td>  </td>
+  	<td> Report </td>
   </tr>
   
   <tr>
   	<td> Nguyen Tu Tung </td>
-  	<td>  </td>
+  	<td> Report </td>
   </tr>  
 </table>
 
