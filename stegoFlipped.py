@@ -1,16 +1,18 @@
 import wave
 
+
 def case(a):
-	if a == 1:
+	if a == "1":
 		encode()
-	elif a == 2:
+	elif a == "2":
 		decode()
-	elif a == 3:
+	elif a == "3":
 		quit()
 	else:
 		print("\nEnter valid Choice!")
 
-def checkFlip(data,a,b):
+
+def checkFlip(data, a, b):
 	store = data & 12
 	if store == 0 and (a == 0 and b == 0):
 		return data
@@ -22,17 +24,18 @@ def checkFlip(data,a,b):
 		return data
 	else:
 		return data ^ 3
+	
 
 def encode():
 	print("\nEncoding Starts..")
-	audio = wave.open("sample.wav",mode="rb")
+	audio = wave.open("input/sample.wav", mode="rb")
 	frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
-	string = str(raw_input("Enter secret text: "))
-	print(string)
-	string = string + int(((2*len(frame_bytes))-(len(string)*8*8))/8) *'#'
-	bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8,'0') for i in string])))
+	string_in = input("\nEnter the string you want to hide: ")
+	print(string_in)
+	string_encoded = string_in + int(((2*len(frame_bytes))-(len(string_in)*8*8))/8) *'#'
+	bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_encoded])))
 	j = 0
-	for i in range(0,len(frame_bytes),2):
+	for i in range(0, len(frame_bytes),2):
 		a = bits[i]
 		b = bits[i+1]
 		frame_bytes[j] = checkFlip(frame_bytes[j],a,b)
@@ -45,17 +48,18 @@ def encode():
 			frame_bytes[j] = frame_bytes[j] + 12
 		j = j + 1
 	frame_modified = bytes(frame_bytes)
-	newAudio =  wave.open('sampleStegoFlip.wav', 'wb')
-	newAudio.setparams(audio.getparams())
-	newAudio.writeframes(frame_modified)
+	new_audio = wave.open('output/sampleStegoFlip.wav', 'wb')
+	new_audio.setparams(audio.getparams())
+	new_audio.writeframes(frame_modified)
 
-	newAudio.close()
+	new_audio.close()
 	audio.close()
-	print(" |---->succesfully encoded inside sampleStegoFlip.wav")
+	print("Successfully encoded inside sampleStegoFlip.wav!")
+
 
 def decode():
 	print("\nDecoding Starts..")
-	audio = wave.open("sampleStegoFlip.wav", mode='rb')
+	audio = wave.open("output/sampleStegoFlip.wav", mode='rb')
 	frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
 	extracted = []
 	for i in range(len(frame_bytes)):
@@ -77,7 +81,8 @@ def decode():
 	print("Sucessfully decoded: "+decoded)
 	audio.close()	
 
-while(1):
-	print("\nSelect an option: \n1)Encode\n2)Decode\n3)exit")
-	val = input("\nChoice:")
+
+while True:
+	print("\nSelect an option: \n1 = Encode\n2 = Decode\n3 = exit")
+	val = input("\nYour choice:")
 	case(val)
