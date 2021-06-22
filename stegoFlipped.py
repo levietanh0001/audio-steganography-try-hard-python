@@ -27,18 +27,18 @@ def checkFlip(data, a, b):
 	
 
 def encode():
+	string_in = input("\nEnter the string you want to hide: ")
+	print(string_in)
 	print("\nEncoding Starts..")
 	audio = wave.open("input/sample.wav", mode="rb")
 	frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
-	string_in = input("\nEnter the string you want to hide: ")
-	print(string_in)
-	string_encoded = string_in + int(((2*len(frame_bytes))-(len(string_in)*8*8))/8) *'#'
+	string_encoded = string_in + int(((2*len(frame_bytes))-(len(string_in)*8*8))/8) * '#'
 	bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_encoded])))
 	j = 0
 	for i in range(0, len(frame_bytes),2):
 		a = bits[i]
 		b = bits[i+1]
-		frame_bytes[j] = checkFlip(frame_bytes[j],a,b)
+		frame_bytes[j] = checkFlip(frame_bytes[j], a, b)
 		frame_bytes[j] = frame_bytes[j] & 243
 		if a==0 and b==1:
 			frame_bytes[j] = frame_bytes[j] + 4
@@ -76,8 +76,8 @@ def decode():
 		elif frame_bytes[i] == 12:
 			extracted.append(1)
 			extracted.append(1)
-	string = "".join(chr(int("".join(map(str,extracted[i:i+8])),2)) for i in range(0,len(extracted),8))
-	decoded = string.split("###")[0]
+	string_out = "".join(chr(int("".join(map(str,extracted[i:i+8])),2)) for i in range(0,len(extracted),8))
+	decoded = string_out.split("###")[0]
 	print("Sucessfully decoded: "+decoded)
 	audio.close()	
 
