@@ -83,6 +83,6 @@ def decode():
 
 
 while True:
-	print("\nEnter your choice: \n1 = Encode\n2 = Decode\n3 = exit")
+	print("\nEnter your choice: \n1 = Encode\n2 = Decode\n3 = Exit")
 	val = input("\nYour choice:")
 	case(val)
