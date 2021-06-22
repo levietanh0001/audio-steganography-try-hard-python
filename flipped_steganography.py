@@ -40,11 +40,11 @@ def encode():
 		b = bits[i+1]
 		frame_bytes[j] = check_flip(frame_bytes[j], a, b)
 		frame_bytes[j] = frame_bytes[j] & 243
-		if a==0 and b==1:
+		if a == 0 and b == 1:
 			frame_bytes[j] = frame_bytes[j] + 4
-		elif a==1 and b==0:
+		elif a == 1 and b == 0:
 			frame_bytes[j] = frame_bytes[j] + 8
-		elif a==1 and b==1:
+		elif a == 1 and b == 1:
 			frame_bytes[j] = frame_bytes[j] + 12
 		j = j + 1
 	frame_modified = bytes(frame_bytes)
