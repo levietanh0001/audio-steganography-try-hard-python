@@ -14,15 +14,12 @@ def case(a):
 
 def encode():
     string_in = input("\nEnter the string you want to hide: ")
+    print(string_in)
     print("\nEncoding in progress...")
+
     audio = wave.open("input/sample.wav", mode="rb")
     frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
-
-    # string_in = "Spiderman is Peter Parker"
-    print(string_in)
-    # create a new string from the original string
     string_in = string_in + int((len(frame_bytes) - (len(string_in) * 64)) / 8) * '#'
-
     bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_in])))
     for i, bit in enumerate(bits):
         frame_bytes[i] = (frame_bytes[i] & 254) | bit
