@@ -1,7 +1,7 @@
 import wave
 
 
-def case(a):
+def start(a):
 	if a == "1":
 		encode()
 	elif a == "2":
@@ -12,7 +12,7 @@ def case(a):
 		print("\nEnter valid Choice!")
 
 
-def checkFlip(data, a, b):
+def check_flip(data, a, b):
 	store = data & 12
 	if store == 0 and (a == 0 and b == 0):
 		return data
@@ -38,7 +38,7 @@ def encode():
 	for i in range(0, len(frame_bytes),2):
 		a = bits[i]
 		b = bits[i+1]
-		frame_bytes[j] = checkFlip(frame_bytes[j], a, b)
+		frame_bytes[j] = check_flip(frame_bytes[j], a, b)
 		frame_bytes[j] = frame_bytes[j] & 243
 		if a==0 and b==1:
 			frame_bytes[j] = frame_bytes[j] + 4
@@ -83,6 +83,6 @@ def decode():
 
 
 while True:
-	print("\nEnter your choice: \n1 = Encode\n2 = Decode\n3 = Exit")
-	val = input("\nYour choice:")
-	case(val)
+	print("\nEnter your choice:\n1 = Encode\n2 = Decode\n3 = Exit")
+	my_choice = input("\nYour choice: ")
+	start(my_choice)

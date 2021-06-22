@@ -1,7 +1,7 @@
 import wave
 
 
-def case(a):
+def start(a):
     if a == '1':
         encode()
     elif a == '2':
@@ -48,5 +48,5 @@ def decode():
 
 while True:
     print("\nEnter your choice:\n1 = Encode\n2 = Decode\n3 = Exit")
-    val = input("\nYour choice: ")
-    case(val)
+    my_choice = input("\nYour choice: ")
+    start(my_choice)
