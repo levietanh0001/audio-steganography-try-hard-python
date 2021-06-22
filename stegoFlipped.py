@@ -78,11 +78,11 @@ def decode():
 			extracted.append(1)
 	string_out = "".join(chr(int("".join(map(str,extracted[i:i+8])),2)) for i in range(0,len(extracted),8))
 	decoded = string_out.split("###")[0]
-	print("Sucessfully decoded: "+decoded)
+	print("Successfully decoded: "+decoded)
 	audio.close()	
 
 
 while True:
-	print("\nSelect an option: \n1 = Encode\n2 = Decode\n3 = exit")
+	print("\nEnter your choice: \n1 = Encode\n2 = Decode\n3 = exit")
 	val = input("\nYour choice:")
 	case(val)
