@@ -2,14 +2,14 @@ import wave
 
 
 def start(a):
-    if a == '1':
+    if a == "1":
         encode()
-    elif a == '2':
+    elif a == "2":
         decode()
-    elif a == '3':
+    elif a == "3":
         quit()
     else:
-        print("\nEnter valid choice!")
+        print("\nEnter valid Choice!")
 
 
 def encode():
