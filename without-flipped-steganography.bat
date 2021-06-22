@@ -1,3 +1,3 @@
 pushd %CD%
-python stegoWithoutFlip.py
+python without_flipped_steganography.py
 pause

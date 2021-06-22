@@ -1,3 +1,3 @@
 pushd %CD%
-python stego.py
+python steganography.py
 pause
