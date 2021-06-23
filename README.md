@@ -45,11 +45,11 @@
 ## Project Explained
 
 ### Project Structures
----input---sample.wav
-|
----output---sample_out.wav
-|
----audio_steganography.bat, audio_steganography.py, install-packages.bat, uninstall-packages.bat
+---input---sample.wav <br>
+| <br>
+---output---sample_out.wav <br>
+| <br>
+---audio_steganography.bat, audio_steganography.py, install-packages.bat, uninstall-packages.bat <br>
 
 ### Setup
 <p>To run this project, first double click on install-packages.bat to install required modules for the program. Then we run audio_steganography.bat to start the code.</p>
