@@ -42,7 +42,7 @@ def encode(wav_in, wav_out):
 
     new_audio.close()
     audio.close()
-    print("Successfully encoded into sample_out.wav!")
+    print("Successfully encoded!")
 
 
 def decode(wav_out):
