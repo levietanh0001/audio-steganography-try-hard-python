@@ -1,7 +1,8 @@
 import wave
+import time
 
 
-def start(a):
+def start_steganography(a):
     if a == "1":
         encode()
     elif a == "2":
@@ -15,33 +16,43 @@ def start(a):
 def encode():
     string_in = input("\nEnter the string you want to hide: ")
     print(string_in)
-    print("\nEncoding in progress...")
 
+    print("\nOpening wav...")
     audio = wave.open("input/sample.wav", mode="rb")
-    frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
-    string_in = string_in + int((len(frame_bytes) - (len(string_in) * 64)) / 8) * '#'
-    bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_in])))
+    time.sleep(0.2)
+
+    print("\nEncoding...")
+    bytes_array_encode = bytearray(list(audio.readframes(audio.getnframes())))
+    string_mod = string_in + int((len(bytes_array_encode) - (len(string_in) * 64)) / 8) * '#'
+    bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_mod])))
     for i, bit in enumerate(bits):
-        frame_bytes[i] = (frame_bytes[i] & 254) | bit
-    frame_modified = bytes(frame_bytes)
-    for i in range(0, 10):
-        print(frame_bytes[i])
+        bytes_array_encode[i] = (bytes_array_encode[i] & 254) | bit
+    bytes_array_encode_mod_object = bytes(bytes_array_encode)
+    time.sleep(0.2)
+
+    # for i in range(0, 10):
+    #     print(bytes_array_encode[i])
+    print("\nWriting to sample_out.wav...")
     new_audio = wave.open('output/sample_out.wav', 'wb')
     new_audio.setparams(audio.getparams())
-    new_audio.writeframes(frame_modified)
+    new_audio.writeframes(bytes_array_encode_mod_object)
+    time.sleep(0.2)
 
     new_audio.close()
     audio.close()
-    print("Successfully encoded into sample_out.wav")
+    print("Successfully encoded into sample_out.wav!")
 
 
 def decode():
-    print("\nDecoding Starts...")
+    print("\nDecoding...")
     audio = wave.open("output/sample_out.wav", mode='rb')
-    frame_bytes = bytearray(list(audio.readframes(audio.getnframes())))
-    extracted = [frame_bytes[i] & 1 for i in range(len(frame_bytes))]
-    string_out = "".join(chr(int("".join(map(str, extracted[i:i + 8])), 2)) for i in range(0, len(extracted), 8))
-    decoded = string_out.split("###")[0]
+    # get array of bytes from wav
+    bytes_array_decode = bytearray(list(audio.readframes(audio.getnframes())))
+
+    extracted_list = [bytes_array_decode[i] & 1 for i in range(len(bytes_array_decode))]
+    string_extracted = "".join(chr(int("".join(map(str, extracted_list[i:i + 8])), 2)) for i in range(0, len(extracted_list), 8))
+    decoded = string_extracted.split("###")[0]
+    time.sleep(0.2)
     print("Successfully decoded: " + decoded)
     audio.close()
 
@@ -49,4 +60,4 @@ def decode():
 while True:
     print("\nEnter your choice:\n1 = Encode\n2 = Decode\n3 = Exit")
     my_choice = input("\nYour choice: ")
-    start(my_choice)
+    start_steganography(my_choice)
