@@ -48,6 +48,7 @@
 1. OS: Windows 10
 2. Python 3.7 installed (https://www.howtogeek.com/197947/how-to-install-python-on-windows/)
 3. Input audio: in WAV format (by default it's sample.wav)
+4. Non-unicode message
 
 ## Project Explained
 
