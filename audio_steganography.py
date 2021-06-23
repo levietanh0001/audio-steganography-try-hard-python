@@ -38,16 +38,19 @@ def encode(wav_in, wav_out):
     # get array of bytes from audio frames
     bytes_array_encode = bytearray(bytes_list)
 
-    # bytes_array_encode = bytearray(list(audio.readframes(audio.getnframes())))
+    # modify original message
     string_mod = string_in + int((len(bytes_array_encode) - (len(string_in) * 64)) / 8) * '#'
+
+    # turn modified string into a list of bits
     bits_list = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_mod])))
+
+    # encode and turn the list of bits into a new array of bytes
     for i, bit in enumerate(bits_list):
         bytes_array_encode[i] = (bytes_array_encode[i] & 254) | bit
     bytes_array_encode_mod_object = bytes(bytes_array_encode)
     time.sleep(0.2)
 
-    # for i in range(0, 10):
-    #     print(bytes_array_encode[i])
+    # writing the new encoded array of bytes into output WAV audio
     print("\nWriting to sample_out.wav...")
     new_audio = wave.open(wav_out, 'wb')
     new_audio.setparams(audio.getparams())
