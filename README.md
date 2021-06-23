@@ -75,10 +75,10 @@
 
 ![image](https://user-images.githubusercontent.com/47298653/123111209-ee052780-d466-11eb-89db-7146ef47faaa.png)
 
- 
+### Exit
 
+![image](https://user-images.githubusercontent.com/47298653/123111351-0a08c900-d467-11eb-8092-dc5b966695a5.png)
 
-![image](https://user-images.githubusercontent.com/47298653/123110981-c6ae5a80-d466-11eb-8d91-783490b7f143.png)
 
 
 
