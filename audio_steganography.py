@@ -1,4 +1,4 @@
-1import wave
+import wave
 import time
 
 
@@ -20,6 +20,7 @@ def encode(wav_in, wav_out):
     print(string_in)
 
     print("\nOpening wav...")
+    # open and get wav audio object
     audio = wave.open(wav_in, mode="rb")
     time.sleep(0.2)
 
