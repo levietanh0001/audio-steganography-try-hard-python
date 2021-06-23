@@ -16,6 +16,7 @@ def start_steganography(a):
 
 
 def encode(wav_in, wav_out):
+    # text to be hidden inside wav file
     string_in = input("\nEnter the string you want to hide: ")
     print(string_in)
 
@@ -25,7 +26,19 @@ def encode(wav_in, wav_out):
     time.sleep(0.2)
 
     print("\nEncoding...")
-    bytes_array_encode = bytearray(list(audio.readframes(audio.getnframes())))
+    # get number of frames from WAV audio
+    num_of_audio_frames = audio.getnframes()
+
+    # get bytes object
+    bytes_object = audio.readframes(num_of_audio_frames)
+
+    # convert bytes object to list
+    bytes_list = list(bytes_object)
+
+    # get array of bytes from audio frames
+    bytes_array_encode = bytearray(bytes_list)
+
+    # bytes_array_encode = bytearray(list(audio.readframes(audio.getnframes())))
     string_mod = string_in + int((len(bytes_array_encode) - (len(string_in) * 64)) / 8) * '#'
     bits_list = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_mod])))
     for i, bit in enumerate(bits_list):
