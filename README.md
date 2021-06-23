@@ -39,10 +39,10 @@
 
 ## Contributions
 1. Le Viet Anh: 
-2. Do Thanh Dat
-3. Vu Tuan Phuong Nam
-4. Tran Bao Huy
-5. Nguyen Tu Tung
+2. Do Thanh Dat:
+3. Vu Tuan Phuong Nam:
+4. Tran Bao Huy:
+5. Nguyen Tu Tung:
 
 ## Requirements
 1. OS: Windows 10
