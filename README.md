@@ -48,6 +48,17 @@
 
 ![image](https://user-images.githubusercontent.com/47298653/123109070-20ae2080-d465-11eb-9a81-76c950a60098.png)
 
+<p>The main menu will look like this:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123109327-57843680-d465-11eb-9111-81d3ebe2b2f0.png)
+
+<p>Enter 1 for encoding, then enter whatever message you want to hide inside sample.wav, for example 'Hello World' as following:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123109637-99ad7800-d465-11eb-8c32-841101cf8732.png)
+
+
+
+
 
 
 
