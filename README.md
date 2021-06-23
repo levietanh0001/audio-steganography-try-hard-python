@@ -90,9 +90,22 @@
 ### Algorithm
 <p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information (represented in bytes) at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
 
+<p>Input text to be hidden inside sample.wav</p>
 
+```python
+# text to be hidden inside wav file
+string_in = input("\nEnter the string you want to hide: ")
+print(string_in)
+```
+<p>Get WAV audio object</p>
+```python
+print("\nOpening wav...")
+# open and get wav audio object
+audio = wave.open(wav_in, mode="rb")
+time.sleep(0.2)
+```
 
-
+<p></p>
 
 
 
