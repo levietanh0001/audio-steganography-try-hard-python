@@ -3,8 +3,8 @@ import time
 
 
 def start_steganography(a):
-    wav_in = "input/sample.wav"
-    wav_out = "output/sample_out.wav"
+    wav_in = "input/in.wav"
+    wav_out = "output/encoded.wav"
     if a == "1":
         encode(wav_in, wav_out)
     elif a == "2":
