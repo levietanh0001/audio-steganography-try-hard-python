@@ -37,6 +37,13 @@
   </tr>  
 </table>
 
+## Contributions
+1. Le Viet Anh: 
+2. Do Thanh Dat
+3. Vu Tuan Phuong Nam
+4. Tran Bao Huy
+5. Nguyen Tu Tung
+
 ## Requirements
 1. OS: Windows 10
 2. Python 3.7 installed (https://www.howtogeek.com/197947/how-to-install-python-on-windows/)
@@ -81,7 +88,8 @@
 ![image](https://user-images.githubusercontent.com/47298653/123111351-0a08c900-d467-11eb-8092-dc5b966695a5.png)
 
 ### Algorithm
-<p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
+<p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information (represented in bytes) at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
+
 
 
 
