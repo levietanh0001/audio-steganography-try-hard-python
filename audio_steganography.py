@@ -21,6 +21,7 @@ def encode(wav_in, wav_out):
     print(string_in)
 
     print("\nOpening wav...")
+
     # open and get wav audio object
     audio = wave.open(wav_in, mode="rb")
     time.sleep(0.2)
@@ -51,7 +52,7 @@ def encode(wav_in, wav_out):
     time.sleep(0.2)
 
     # writing the new encoded array of bytes into output WAV audio
-    print("\nWriting to sample_out.wav...")
+    print("\nWriting to output WAV...")
     new_audio = wave.open(wav_out, 'wb')
     new_audio.setparams(audio.getparams())
     new_audio.writeframes(bytes_array_encode_mod_object)
@@ -63,10 +64,13 @@ def encode(wav_in, wav_out):
 
 
 def decode(wav_out):
-    print("\nDecoding...")
+    print("\nOpening encoded wav...")
+
     # get encoded WAV audio object
     audio = wave.open(wav_out, mode='rb')
+    time.sleep(0.2)
 
+    print('Decoding...')
     # get array of bytes from encoded WAV audio
     bytes_array_decode = bytearray(list(audio.readframes(audio.getnframes())))
 
