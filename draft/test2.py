@@ -24,4 +24,5 @@ import wave
 
 # print(3 | 6)
 # https://www.geeksforgeeks.org/program-decimal-binary-conversion/
-print(bin(5))
+# print(bin(5))
+print('Đầu Cắt Moi'.encode('utf-8'))
