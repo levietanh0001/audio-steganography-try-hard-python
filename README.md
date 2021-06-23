@@ -80,6 +80,8 @@
 
 ![image](https://user-images.githubusercontent.com/47298653/123111351-0a08c900-d467-11eb-8092-dc5b966695a5.png)
 
+### Algorithm
+<p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
 
 
 
@@ -89,6 +91,7 @@
 
 
 ## References
-https://github.com/sniperline047/Audio-Steganography 
+1. https://github.com/sniperline047/Audio-Steganography 
+2. https://stackoverflow.com/questions/3957025/what-does-a-audio-frame-contain  
 
 
