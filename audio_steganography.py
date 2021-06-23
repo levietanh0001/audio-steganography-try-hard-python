@@ -64,12 +64,19 @@ def encode(wav_in, wav_out):
 
 def decode(wav_out):
     print("\nDecoding...")
+    # get encoded WAV audio object
     audio = wave.open(wav_out, mode='rb')
-    # get array of bytes from wav
+
+    # get array of bytes from encoded WAV audio
     bytes_array_decode = bytearray(list(audio.readframes(audio.getnframes())))
 
-    extracted_list = [bytes_array_decode[i] & 1 for i in range(len(bytes_array_decode))]
-    string_extracted = "".join(chr(int("".join(map(str, extracted_list[i:i + 8])), 2)) for i in range(0, len(extracted_list), 8))
+    # extract a list of bits from encoded array of bytes
+    extracted_bits_list = [bytes_array_decode[i] & 1 for i in range(len(bytes_array_decode))]
+
+    # produce a string from the extracted list of bits
+    string_extracted = "".join(chr(int("".join(map(str, extracted_bits_list[i:i + 8])), 2)) for i in range(0, len(extracted_bits_list), 8))
+
+    # decode produced string
     decoded = string_extracted.split("###")[0]
     time.sleep(0.2)
     print("Successfully decoded: " + decoded)
