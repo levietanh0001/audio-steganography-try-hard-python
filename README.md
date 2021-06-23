@@ -42,6 +42,15 @@
 3. Input audio: in WAV format (by default it's sample.wav)
 
 ## Project Explained
+
+### Project Structures
+---input---sample.wav
+|
+---output---sample_out.wav
+|
+---audio_steganography.bat, audio_steganography.py, install-packages.bat, uninstall-packages.bat
+
+### Setup
 <p>To run this project, first double click on install-packages.bat to install required modules for the program. Then we run audio_steganography.bat to start the code.</p>
 <p>The input wav file is located inside input folder, while the output wav file with encoded text could be found in output directory.</p>
 <p>Inside audio_steganography.py we have 3 methods: encode, decode and start_steganography. We can adjust the path to input and output in start_steganography as shown below:</p>
@@ -52,11 +61,24 @@
 
 ![image](https://user-images.githubusercontent.com/47298653/123109327-57843680-d465-11eb-9111-81d3ebe2b2f0.png)
 
-<p>Enter 1 for encoding, then enter whatever message you want to hide inside sample.wav, for example 'Hello World' as following:</p>
+### Encode
+<p>Enter 1 for encoding, then enter whatever message you want to hide inside sample.wav, for example 'Hello World' as followed:</p>
 
 ![image](https://user-images.githubusercontent.com/47298653/123109637-99ad7800-d465-11eb-8c32-841101cf8732.png)
 
 ![image](https://user-images.githubusercontent.com/47298653/123109926-d7120580-d465-11eb-801e-f49f165bba32.png)
+
+### Decode
+<p>To decode, simply enter 2 as below:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123111159-e34a9280-d466-11eb-8282-78dde6b0e4b6.png)
+
+![image](https://user-images.githubusercontent.com/47298653/123111209-ee052780-d466-11eb-89db-7146ef47faaa.png)
+
+ 
+
+
+![image](https://user-images.githubusercontent.com/47298653/123110981-c6ae5a80-d466-11eb-8d91-783490b7f143.png)
 
 
 
