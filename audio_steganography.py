@@ -1,4 +1,4 @@
-import wave
+1import wave
 import time
 
 
