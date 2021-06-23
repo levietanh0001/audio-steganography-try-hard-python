@@ -26,8 +26,8 @@ def encode(wav_in, wav_out):
     print("\nEncoding...")
     bytes_array_encode = bytearray(list(audio.readframes(audio.getnframes())))
     string_mod = string_in + int((len(bytes_array_encode) - (len(string_in) * 64)) / 8) * '#'
-    bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_mod])))
-    for i, bit in enumerate(bits):
+    bits_list = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string_mod])))
+    for i, bit in enumerate(bits_list):
         bytes_array_encode[i] = (bytes_array_encode[i] & 254) | bit
     bytes_array_encode_mod_object = bytes(bytes_array_encode)
     time.sleep(0.2)
