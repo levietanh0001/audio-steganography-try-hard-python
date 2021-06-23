@@ -36,6 +36,35 @@
   </tr>  
 </table>
 
+## Requirements
+1. OS: Windows 10
+2. Python 3.7 installed (https://www.howtogeek.com/197947/how-to-install-python-on-windows/)
+3. Input audio: in WAV format (by default it's sample.wav)
+
+## Project Explained
+<p>To run this project, first double click on install-packages.bat to install required modules for the program. Then we run audio_steganography.bat to start the code.</p>
+<p>The input wav file is located inside input folder, while the output wav file with encoded text could be found in output directory.</p>
+<p>Inside audio_steganography.py we have 3 methods: encode, decode and start_steganography. We can adjust the path to input and output in start_steganography as shown below:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123109070-20ae2080-d465-11eb-9a81-76c950a60098.png)
+
+<p>The main menu will look like this:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123109327-57843680-d465-11eb-9111-81d3ebe2b2f0.png)
+
+<p>Enter 1 for encoding, then enter whatever message you want to hide inside sample.wav, for example 'Hello World' as following:</p>
+
+![image](https://user-images.githubusercontent.com/47298653/123109637-99ad7800-d465-11eb-8c32-841101cf8732.png)
+
+![image](https://user-images.githubusercontent.com/47298653/123109926-d7120580-d465-11eb-801e-f49f165bba32.png)
+
+
+
+
+
+
+
+
 ## References
 https://github.com/sniperline047/Audio-Steganography 
 
