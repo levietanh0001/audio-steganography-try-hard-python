@@ -99,6 +99,7 @@ string_in = input("\nEnter the string you want to hide: ")
 print(string_in)
 ```
 <p>Get WAV audio object</p>
+
 ```python
 print("\nOpening wav...")
 # open and get wav audio object
