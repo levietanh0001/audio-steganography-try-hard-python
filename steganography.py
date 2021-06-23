@@ -3,22 +3,24 @@ import time
 
 
 def start_steganography(a):
+    wav_in = "input/sample.wav"
+    wav_out = "output/sample_out.wav"
     if a == "1":
-        encode()
+        encode(wav_in, wav_out)
     elif a == "2":
-        decode()
+        decode(wav_out)
     elif a == "3":
         quit()
     else:
         print("\nEnter valid Choice!")
 
 
-def encode():
+def encode(wav_in, wav_out):
     string_in = input("\nEnter the string you want to hide: ")
     print(string_in)
 
     print("\nOpening wav...")
-    audio = wave.open("input/sample.wav", mode="rb")
+    audio = wave.open(wav_in, mode="rb")
     time.sleep(0.2)
 
     print("\nEncoding...")
@@ -33,7 +35,7 @@ def encode():
     # for i in range(0, 10):
     #     print(bytes_array_encode[i])
     print("\nWriting to sample_out.wav...")
-    new_audio = wave.open('output/sample_out.wav', 'wb')
+    new_audio = wave.open(wav_out, 'wb')
     new_audio.setparams(audio.getparams())
     new_audio.writeframes(bytes_array_encode_mod_object)
     time.sleep(0.2)
@@ -43,9 +45,9 @@ def encode():
     print("Successfully encoded into sample_out.wav!")
 
 
-def decode():
+def decode(wav_out):
     print("\nDecoding...")
-    audio = wave.open("output/sample_out.wav", mode='rb')
+    audio = wave.open(wav_out, mode='rb')
     # get array of bytes from wav
     bytes_array_decode = bytearray(list(audio.readframes(audio.getnframes())))
 
