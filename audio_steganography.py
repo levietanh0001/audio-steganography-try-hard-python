@@ -3,7 +3,7 @@ import time
 
 
 def start_steganography(a):
-    wav_in = "input/in.wav"
+    wav_in = "input/water_droplet.wav"
     wav_out = "output/encoded.wav"
     if a == "1":
         encode(wav_in, wav_out)
@@ -20,7 +20,7 @@ def encode(wav_in, wav_out):
     string_in = input("\nEnter the string you want to hide: ")
     print(string_in)
 
-    print("\nOpening wav...")
+    print("\nOpening wav..")
 
     # open and get wav audio object
     audio = wave.open(wav_in, mode="rb")
@@ -60,7 +60,7 @@ def encode(wav_in, wav_out):
 
     new_audio.close()
     audio.close()
-    print("Successfully encoded!")
+    print("\nSuccessfully encoded!")
 
 
 def decode(wav_out):
@@ -70,7 +70,7 @@ def decode(wav_out):
     audio = wave.open(wav_out, mode='rb')
     time.sleep(0.2)
 
-    print('Decoding...')
+    print('\nDecoding...')
     # get array of bytes from encoded WAV audio
     bytes_array_decode = bytearray(list(audio.readframes(audio.getnframes())))
 
@@ -78,14 +78,15 @@ def decode(wav_out):
     bits_list_extracted = [bytes_array_decode[i] & 1 for i in range(len(bytes_array_decode))]
 
     # produce a string from the extracted list of bits
-    string_extracted = "".join(chr(int("".join(map(str, bits_list_extracted[i:i + 8])), 2)) for i in range(0, len(bits_list_extracted), 8))
+    string_extracted = "".join(
+        chr(int("".join(map(str, bits_list_extracted[i:i + 8])), 2)) for i in range(0, len(bits_list_extracted), 8))
 
     # decode produced string
     decoded = string_extracted.split("###")[0]
     time.sleep(0.2)
 
     # output original message
-    print("Successfully decoded: " + decoded)
+    print("\nSuccessfully decoded: " + decoded)
     audio.close()
 
 

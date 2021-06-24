@@ -1,1 +1,1 @@
-pip uninstall wave
+pip uninstall wave time
