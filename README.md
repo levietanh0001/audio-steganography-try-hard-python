@@ -94,12 +94,13 @@
 ![image](https://user-images.githubusercontent.com/47298653/123111351-0a08c900-d467-11eb-8092-dc5b966695a5.png)
 
 ### Algorithm
+**About WAV**
 <p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information (represented in bytes) at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
 
-** What is LSB **
+**What is LSB**
 <p>Least Significant bit also called RightMost Bit is a lowest bit of a binary number. For example in binary number 10010010, "0" is the least significant bit.</p>
 
-What is LSB-Steganography **
+**What is LSB-Steganography**
 <p>LSB-Steganography is a steganography technique in which we hide messages inside an image by replacing Least significant bit of image with the bits of message to be hidden. By modifying only the first most right bit of an image we can insert our secret message and it also make the picture unnoticeable, but if our message is too large it will start modifying the second right most bit and so on and an attacker can notice the changes in picture.</p>
 
 
