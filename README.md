@@ -52,6 +52,10 @@
 
 ## Project Explained
 
+### Console appearance
+
+![image](https://user-images.githubusercontent.com/47298653/123188431-37d12a80-d4c6-11eb-91d4-ebc15dcbcfb9.png)
+
 ### Project Structures
 ---input---sample.wav <br>
 | <br>
