@@ -121,5 +121,6 @@
 ## References
 1. https://github.com/sniperline047/Audio-Steganography 
 2. https://stackoverflow.com/questions/3957025/what-does-a-audio-frame-contain  
+3. https://www.cybrary.it/blog/0p3n/hide-secret-message-inside-image-using-lsb-steganography/
 
 
