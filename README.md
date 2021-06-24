@@ -96,22 +96,11 @@
 ### Algorithm
 <p>WAV audio is a sequence of frames, each frame contains amplitude (loudness) information (represented in bytes) at that particular point in time. To produce sound, thousands of these frames are played in sequence to produce frequencies.</p>
 
-<p>Input text to be hidden inside in.wav</p>
+<p>What is LSB</p>
+<p>Least Significant bit also called RightMost Bit is a lowest bit of a binary number. For example in binary number 10010010, "0" is the least significant bit.</p>
 
-```python
-
-```
-<p>Get WAV audio object</p>
-
-```python
-
-```
-
-<p>Get number of audio frames from WAV file</p>
-
-```python
-
-```
+<p>What is LSB-Steganography</p>
+<p>LSB-Steganography is a steganography technique in which we hide messages inside an image by replacing Least significant bit of image with the bits of message to be hidden. By modifying only the first most right bit of an image we can insert our secret message and it also make the picture unnoticeable, but if our message is too large it will start modifying the second right most bit and so on and an attacker can notice the changes in picture.</p>
 
 
 
